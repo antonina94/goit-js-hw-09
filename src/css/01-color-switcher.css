@@ -1,0 +1,15 @@
+.btn-group {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+.btn {
+    padding: 10px 32px;
+  min-width: 200px;
+  min-height: 50px;
+  margin: 10px;
+  font-size: 16px;
+}
+
