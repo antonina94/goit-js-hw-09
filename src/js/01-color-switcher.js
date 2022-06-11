@@ -8,7 +8,7 @@ let timerId = null;
 
 function onStartColorClick(){
     timerId = setInterval(() => {
-        document.body.style.backgroundColor = getRandomHexColor()
+    document.body.style.backgroundColor = getRandomHexColor()
       }, 1000);
       if(timerId){
           startButton.disabled = true
@@ -16,7 +16,6 @@ function onStartColorClick(){
       }
       
 }
-
 
 
 function getRandomHexColor() {
@@ -35,5 +34,4 @@ function getRandomHexColor() {
 
 
 startButton.addEventListener('click', onStartColorClick)
-console.log(startButton)
 stopButton.addEventListener('click', onStopButtonClick)
