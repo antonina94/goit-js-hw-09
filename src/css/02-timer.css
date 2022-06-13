@@ -5,6 +5,7 @@
 .field{
    margin-left: 10px; 
    padding: auto;
+   text-align: center;
 }
 
 .days-field{
@@ -13,6 +14,6 @@ margin-left: 0;
 
 .value {
     display: block;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
