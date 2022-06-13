@@ -1,0 +1,18 @@
+.timer{
+    display: flex;
+}
+
+.field{
+   margin-left: 10px; 
+   padding: auto;
+}
+
+.days-field{
+margin-left: 0;
+}
+
+.value {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}

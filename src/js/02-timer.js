@@ -1,5 +1,7 @@
+import "../css//02-timer.css";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+
 
 const inputFlatpickr = document.querySelector('#datetime-picker')
 const buttonStart = document.querySelector('button[data-start]')
@@ -8,7 +10,7 @@ const timerHours = document.querySelector('span[data-hours]')
 const timerMinutes = document.querySelector('span[data-minutes]')
 const timerSeconds = document.querySelector('span[data-seconds]')
 
-buttonStart.setAttribute('disabled', true)
+buttonStart.disabled = true
 
 let inputDates = null
 
@@ -25,9 +27,10 @@ const options = {
       inputDates = selectedDates[0]
       if(inputDates < new Date()){
         alert ("Please choose a date in the future")
+        inputFlatpickr.value = ''
       }
       else{
-        buttonStart.removeAttribute('disabled')
+        buttonStart.disabled = false
       }
     },
   };
