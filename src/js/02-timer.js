@@ -44,7 +44,7 @@ const options = {
     const now = new Date()
     const end = inputDates
      const delta = end - now
-     const {days, hours, minutes, seconds} = convertMs(delta)
+     const {days, hours, minutes, seconds} = addLeadingZero(delta)
        timerDays.textContent = pad(days)
        timerHours.textContent = pad(hours)
        timerMinutes.textContent = pad(minutes)
@@ -57,9 +57,9 @@ const options = {
       buttonStart.disabled = true
     }
   }
+  
 
-
-  function convertMs(ms) {
+  function addLeadingZero(ms) {
     // Number of milliseconds per unit of time
     const second = 1000;
     const minute = second * 60;
@@ -78,9 +78,9 @@ const options = {
     return { days, hours, minutes, seconds };
   }
   
-  console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-  console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-  console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+  console.log(addLeadingZero(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+  console.log(addLeadingZero(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+  console.log(addLeadingZero(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
   function pad(value) {
     return String(value).padStart(2, '0');
