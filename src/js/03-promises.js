@@ -9,13 +9,17 @@ const button = document.querySelector('button[type="submit"]');
 
 function onFormSubmit(e) {
   e.preventDefault();
-  let delay = Number(inputDelay.value);
+  let delay = Number(inputDelay.value) ;
   let step = Number(inputStep.value);
   let amount = Number(inputAmount.value);
   setTimeout(() => {
     for (let i = 0; i < amount; i++) {
-      delay += step;
-      let position = i + 1
+      console.log()
+      let position = i + 1 
+      delay+=step
+      if(position === 1){
+        delay = delay - step
+      }
       createPromise(position, delay)
         .then(({ position, delay }) => {
           Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -24,7 +28,7 @@ function onFormSubmit(e) {
           Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
         });
     }
-  }, delay);
+  }, delay );
 }
 
 form.addEventListener('submit', onFormSubmit);
